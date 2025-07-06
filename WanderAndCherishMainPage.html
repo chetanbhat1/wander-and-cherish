@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wander and Cherish - Main Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+            color: #333333;
+            background-color: #c0a154;
+            background-image: url('https://www.svgbackgrounds.com/wp-content/uploads/2021/05/wave-haikei.svg'), url(https://resources.blogblog.com/blogblog/data/1kt/watermark/body_background_birds.png);
+            background-repeat: repeat, repeat;
+            background-size: 600px, auto;
+            background-position: top left, top left;
+        }
+        a:link {
+            text-decoration: none;
+            color: #cc3300;
+        }
+        a:visited {
+            text-decoration: none;
+            color: #993322;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ff3300;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.3;
+            padding: 0 15px;
+            word-wrap: break-word;
+        }
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .card {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #fff;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: filter 0.2s;
+        }
+        .card:hover img {
+            filter: brightness(0.55);
+        }
+        .card-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1.5rem;
+                min-height: unset;
+                padding: 1rem;
+                margin-left: -2vw;
+            }
+            .card {
+                width: 90vw;
+                height: 45vw;
+                max-width: 400px;
+                max-height: 220px;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            body {
+                min-width: 0;
+            }
+            .main-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            .card {
+                width: 90vw;
+                height: 45vw;
+                max-width: 400px;
+                max-height: 220px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+            .main-container {
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 1rem;
+                min-height: unset;
+                padding: 0.25rem;
+                margin-left: -3vw;
+            }
+            .card {
+                width: 98vw;
+                height: 50vw;
+                max-width: 99vw;
+                max-height: 180px;
+            }
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <a class="card" href="https://wanderandcherish.blogspot.com/2025/07/destinations.html" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Destinations">
+            <div class="card-title">Destinations</div>
+        </a>
+        <a class="card" href="#" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Solo Travel">
+            <div class="card-title">Solo Travel</div>
+        </a>
+        <a class="card" href="https://wanderandcherish.blogspot.com/2025/06/inspiring-motivational-stories.html" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80" alt="Inspiring Stories">
+            <div class="card-title">Inspiring Stories</div>
+        </a>
+        <a class="card" href="https://wanderandcherish.blogspot.com/2025/03/travel-tips.html" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Travel Tips">
+            <div class="card-title">Travel Tips</div>
+        </a>
+    </div>
+</body>
+</html>
