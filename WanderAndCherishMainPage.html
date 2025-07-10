@@ -128,25 +128,43 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                gap: 1rem;
+                gap: 12px;
                 min-height: unset;
                 padding: 0.25rem;
-                margin-left: -3vw;
+
             }
             .card {
-                width: 98vw;
+                box-sizing: border-box;
+                width: 95vw;
+                max-width: 100vw;
                 height: 50vw;
-                max-width: 99vw;
                 max-height: 180px;
+            }
+            .instruction-message {
+                box-sizing: border-box;
+                width: 95vw;
+                max-width: 100vw;
+                margin-bottom: 6px;
+            }
+            .main-container {
+                box-sizing: border-box;
             }
             .card-title {
                 font-size: 1.3rem;
             }
         }
+        .instruction-message {
+            display: block;
+            width: 100%;
+            margin-bottom: 2px;
+        }
     </style>
 </head>
 <body>
     <div class="main-container">
+        <div class="instruction-message" style="background: #fffbe7; color: #7a5c00; border-radius: 8px; padding: 16px; font-size: 1.1rem; text-align: center; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+            Click on the cards below to see the relevant blog posts
+        </div>
         <a class="card" href="https://wanderandcherish.blogspot.com/2025/07/destinations.html" target="_blank" rel="noopener">
             <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Destinations">
             <div class="card-title">Destinations</div>
