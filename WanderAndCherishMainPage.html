@@ -40,12 +40,28 @@
             padding: 0 15px;
             word-wrap: break-word;
         }
+        .header-image {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .header-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
         .main-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: calc(100vh - 400px);
             gap: 2rem;
             padding: 2rem;
         }
@@ -161,6 +177,10 @@
     </style>
 </head>
 <body>
+    <div class="header-image">
+        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEinh_f-5dfIyYT-8ePFrCVd5iY1y_TGd6iFlQLgGeWyfWGuJ3-rP2PleDId1v01Uuah2vPvDdhnsKdS2vz5XvA9pJNpF4X8JcggzwX-ig98aU6w_PsHmkS6iYCUe4-vWs50AhfU6274cLw6g5t2bOnFMSh__12pkApgrVug4jeJ9iwetHHcqz4iDMhHxGA=s1200" 
+             alt="Wander and Cherish Header">
+    </div>
     <div class="main-container">
         <div class="instruction-message" style="background: #fffbe7; color: #7a5c00; border-radius: 8px; padding: 16px; font-size: 1.1rem; text-align: center; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
             Click on the cards below to see the relevant blog posts
