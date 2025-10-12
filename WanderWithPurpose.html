@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wander with Purpose</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+            color: #333333;
+            background: #c0a154 url(https://resources.blogblog.com/blogblog/data/1kt/watermark/body_background_birds.png) repeat scroll top left;
+        }
+
+        .tab-container {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+            position: relative;
+            gap: 5px;
+            padding-left: 10px;
+        }
+
+        .tab {
+            padding: 8px 12px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            text-align: center;
+            width: 200px;
+            position: relative;
+            z-index: 1;
+            font-size: 14px;
+            flex: 0 0 auto;
+        }
+
+        .tab.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+            z-index: 2;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            line-height: 1.3;
+            padding: 0 15px;
+            word-wrap: break-word;
+        }
+
+        .separator {
+            width: 100%;
+            max-width: 100%;
+            margin: 10px 0;
+        }
+
+        .separator img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Mobile Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                min-width: 0;
+            }
+
+            .tab-container {
+                flex-direction: row;
+                border-bottom: 1px solid #ccc;
+                padding: 0 0 0 10px;
+                margin: 0 0 20px 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+                gap: 2px;
+                justify-content: flex-start;
+            }
+
+            .tab-container::-webkit-scrollbar {
+                display: none;
+            }
+
+            .tab {
+                margin-right: 0;
+                margin-bottom: 0;
+                border: 1px solid #ccc;
+                border-bottom: none;
+                width: 180px;
+                padding: 6px 8px;
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            .tab:first-child {
+                border-left: none;
+            }
+
+            .tab.active {
+                border-bottom: 1px solid white;
+                margin-bottom: -1px;
+            }
+
+            h1 {
+                font-size: 20px;
+                padding: 0 10px;
+            }
+
+            .tab-content {
+                padding: 15px;
+                width: 100%;
+            }
+
+            .separator {
+                margin: 15px 0;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            p,
+            div {
+                width: 100%;
+                word-wrap: break-word;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+
+            .tab {
+                width: 160px;
+                padding: 6px 6px;
+                font-size: 12px;
+            }
+
+            .tab-content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-container">
+        <div class="tab active" onclick="switchTab(0)">Journeys That Change You</div>
+        <div class="tab" onclick="switchTab(1)">Unemployed</div>
+    </div>
+
+    <div class="tab-content active">
+        <h1>Deepak's Journey</h1>
+        <p></p><p class="MsoNormal"><b>One Child, A Lifetime of Change</b></p><div class="separator" style="clear: both; text-align: center;"><b><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmjM9ryk7zqCdGedgx6SSl6rKzapEj7rRqPVV_L0HpT6Suk5l0GIvfiFLikce2IKtNwY9hGose6DUP_l8FUxFhslt2atrLWblLYBb8Ya_evEW3IlCAhh0EPRMDBV7SDIUn4eWmf4Qir3g8GV_DdNhyRLROLT4dLDZQhPnrus7_C8eC0SBa5URHtKrRoHc/s2644/b2afa6fc-b06f-4e23-952c-3dc866734d98.JPG" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" data-original-height="2433" data-original-width="2644" height="294" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmjM9ryk7zqCdGedgx6SSl6rKzapEj7rRqPVV_L0HpT6Suk5l0GIvfiFLikce2IKtNwY9hGose6DUP_l8FUxFhslt2atrLWblLYBb8Ya_evEW3IlCAhh0EPRMDBV7SDIUn4eWmf4Qir3g8GV_DdNhyRLROLT4dLDZQhPnrus7_C8eC0SBa5URHtKrRoHc/s320/b2afa6fc-b06f-4e23-952c-3dc866734d98.JPG" width="320" /></a></b></div><b><br /><o:p></o:p></b><p></p>
+
+<p class="MsoNormal"><b><i>I never imagined that a chance meeting with an
+innocent boy in my father's school would one day lead me to stand in front of
+his own home, watching him succeed beyond all expectations.<o:p></o:p></i></b></p>
+
+<p class="MsoNormal">But before that moment came, there was another story, a
+painful lesson that changed the way I chose to help forever.<o:p></o:p></p>
+
+<p class="MsoNormal">Many years ago, I believed in helping children through a
+well-known international sponsorship program. I paid $20 a month to support a
+girl named Mantu Mal. Over time, the fees increased, but I continued to pay,
+thinking of her as part of my family.<o:p></o:p></p>
+
+<p class="MsoNormal">The organization would send me her photo and letters every
+month. I kept her picture on my refrigerator, and my daughters even called her
+their "sister." For eight years, we watched her grow through photos, believing
+we were making a difference.<o:p></o:p></p>
+
+<p class="MsoNormal">Then, one day, a letter arrived. Mantu was "too old" for the
+program and was getting married at just 14. I asked for her contact information
+so I could speak with her and be sure she was okay. The organization refused,
+telling me not to interfere.<o:p></o:p></p>
+
+<p class="MsoNormal">I was heartbroken. To them, she may have been just another
+child in their program, but to me, she was real. I wrote to them saying, "Mantu
+was not a photo on my fridge but a real person for me. Since the world has only
+a few good people left, this will discourage them too."<o:p></o:p></p>
+
+<p class="MsoNormal">From that moment on, I vowed: If I ever sponsored a child
+again, it would be a life I could see, a hand I could hold, a story I could
+follow.<o:p></o:p></p>
+
+<p class="MsoNormal">A few Years later, while traveling to India to visit my
+father, I took a small detour that would change my life and someone
+else's—forever. My father helps run a school,(G.G.Chitnis School) and during my
+visit, he pointed out a small boy standing quietly in the corner. "If his fees
+aren't paid soon," my father said, "he will have to leave the school."<o:p></o:p></p>
+
+<p class="MsoNormal">The boy's name was Deepak. He had lost his father in a
+tragic construction accident, and his mother, a woman from a respectable
+family, was left without a job, struggling to support her son and her elderly
+mother. In India, education is not free; school fees must be paid, and without
+them, even the brightest children can lose their chance to learn.<o:p></o:p></p>
+
+<p class="MsoNormal">I remember the first time I saw Deepak, thin, shy, and with
+an innocence that made my heart ache. My father told me that he couldn't even
+afford milk, the most basic nourishment for a growing child. In that moment, I
+decided I would sponsor his education.<o:p></o:p></p>
+
+<p class="MsoNormal">From that day on, I paid his school fees year after year.
+His mother, with quiet dignity, took work as a maid to support her family. My
+father, ever the educator, kept a watchful eye on Deepak's grades, and each
+time I visited India, Deepak would come to see me. I encouraged him to keep
+studying, to dream bigger. And he did.<o:p></o:p></p>
+
+<p class="MsoNormal">He was a hardworking student, determined to carve out a
+better future. My own children, hearing about his persistence, found
+inspiration in his story. Eventually, Deepak secured admission to a Computer
+Science College Degree program. I helped where I could, my father helped too,
+and his mother's dedication never wavered.<o:p></o:p></p>
+
+<p class="MsoNormal">I still remember visiting his college and meeting the
+principal. The principal told me what a difference I had made in Deepak's life,
+praising his intelligence and potential. But he also added, almost as a
+warning, "When they become successful and stand on their own, they will forget
+you."<o:p></o:p></p>
+
+<p class="MsoNormal">Years passed. Deepak graduated, found a job at an insurance
+company, and worked his way up to become a manager. One day, I stood in front
+of his own home, his very own home and saw him there, confident and successful.
+They say happiness cannot be measured, but in that moment, seeing what he had
+achieved, <i style="font-weight: bold;">I felt joy beyond words. </i>I want to give a special thanks to my dad for teaching me good values.<o:p></o:p></p>
+
+<p class="MsoNormal"><b>It reminded me of a simple truth: you don't have to
+change the whole world, just change one child's world, and you change the
+future.<o:p></o:p></b></p>
+
+<p class="MsoNormal">If you ever feel powerless in the face of the world's
+problems, remember this: You don't have to save everyone. Start with one. Show
+up, believe in them, and keep showing up. You might just change their life and
+in doing so, you'll change the world. <o:p></o:p></p>
+
+<p class="MsoNormal">Today Deepak travels to Indian villages trying to help
+educate younger kids just like him and his success gives me a sense of
+contentment, I cannot explain.<o:p></o:p></p>
+
+<p class="MsoNormal"><br /></p>
+    </div>
+
+    <div class="tab-content">
+        <h1>Unemployed</h1>
+        
+        <p class="MsoNormal"><b><i>"For years I've worked in workforce training, guiding people through the hardest chapters of their lives. Now, I want to pull back the curtain and show their world—the quiet struggles, the small victories, and the raw truth of what it really means to be unemployed today."</i></b></p>
+
+        <p class="MsoNormal">I created a reality TV concept called Unemployed, a series that pulls back the curtain on what it truly means to be without work in today's world. I copyrighted it, presented it to some producers, but no one picked it up. The response was always the same: it 'lacks entertainment value.'</p>
+
+        <p class="MsoNormal">But after years in workforce training, I know that couldn't be further from the truth. These stories are dramatic, emotional, and deeply relatable. They aren't just statistics, they're parents, graduates, dreamers, and survivors. Unemployed isn't about spectacle, it's about humanity. And in a world where millions are facing this struggle, there's nothing more timely, relevant, or necessary.</p>
+
+        <p class="MsoNormal">Unemployment isn't just about a lost paycheck. It can mean losing your home, custody of your children, relationships, and even your health. I've had students facing foreclosure, living out of their cars because rent was out of reach, and battling medical problems they couldn't afford to treat. The true cost of unemployment runs far deeper than money, it's a fight for dignity, stability, and survival. For many, the hardest loss is hope itself, as finding a job becomes harder and harder.</p>
+
+        <p class="MsoNormal"><b>Come let me tell you a few stories…..</b></p>
+
+        <p class="MsoNormal"><i>Step into Maria's world, her experiences, her feelings as I tell her story from her point of view.</i></p>
+
+        <p class="MsoNormal">Maria sat curled up on the edge of her bed, scrolling through job postings on her phone. The listings blurred together "experience required," "references needed" things she didn't have. She sighed and closed the app, tossing the phone beside her. It wasn't the first night she'd ended like this, staring at the ceiling, wondering if she'd ever catch up with everyone else.</p>
+
+        <p class="MsoNormal">Growing up, stability had been a stranger. Foster homes came and went, and the old memories she carried weren't ones she liked to revisit. Some days she could push them down, but on days like this, they rose up, making every rejection letter feel heavier.</p>
+
+        <p class="MsoNormal">Things began to shift when she enrolled in a workforce training program. At first, she thought it would be another box to check, another place where she wouldn't fit. But the classes gave her structure, and little by little, she started picking up skills she never thought she'd learn, resume writing, interview prep, even how to use software she'd only ever heard about.</p>
+
+        <p class="MsoNormal">I noticed when Maria hung back or grew quiet. I encouraged her, nudged her to speak up, and stayed after class to walk her through things she didn't understand. For the first time, Maria felt like someone believed she was capable.</p>
+
+        <p class="MsoNormal">With my guidance, Maria applied for a job she almost talked herself out of. When she got the call saying she'd been hired, she cried, not because everything was suddenly perfect, but because it was the first time she could see a different future opening up in front of her.</p>
+
+        <p class="MsoNormal"><b>Enter my world for a glimpse into a day of workforce training………</b></p>
+
+        <p class="MsoNormal">The classroom is quiet. Rows of students, some weary, some anxious, sit with notebooks open. A woman in her 50s walks in-poised, confident, but carrying the weight of a storm no one sees. She was once a bank director. Laid off. Battling cancer. Her savings wiped out by medical bills. No family to turn to.</p>
+
+        <p class="MsoNormal">She takes a seat, pulls out her notebook, and begins to write. Hours pass, lessons are given, but the true lesson is her presence. Suddenly, she collapses. The room freezes. Later, I learn the truth: she has only months to live. Yet here she is, showing up every day, determined to learn, to survive, to hope.</p>
+
+        <p class="MsoNormal">She looks at the class and says, softly but firmly:</p>
+
+        <p class="MsoNormal"><b>"As long as you have life, you have hope."</b></p>
+
+        <p class="MsoNormal">And just like that, the room, the students, even I, understand what it really means to fight against unemployment, against loss, against life itself.</p>
+
+        <p class="MsoNormal">For me, these are not just stories, they are real lives. Behind every statistic about unemployment, there are people carrying heavy histories: young adults aging out of foster care, parents trying to provide for their children, workers who have lost their jobs after years of loyalty, and those still healing from trauma that shadows every opportunity.</p>
+
+        <p class="MsoNormal">Hopelessness is not abstract, it shows up in empty refrigerators, in the quiet of a bedroom where someone scrolls through job postings they don't feel qualified for, in the silence after another rejection email. These are moments that rarely make headlines, but they are the lived reality of countless people across our communities.</p>
+
+        <p class="MsoNormal">That's why workforce training matters. In the United States, we have resources many countries cannot offer, yet access is uneven, and too many are left behind. When training programs are done well, they do more than teach skills, they restore confidence, open doors, and remind people that their past does not define their future. And often, it is a single teacher, mentor, or coach who makes the difference: someone who sees potential when the individual cannot yet see it in themselves.</p>
+
+        <p class="MsoNormal">But I believe we can do better. We call ourselves a developed nation, yet too many of our neighbors are left to navigate unemployment, poverty, and trauma without the support they need. There is a mismatch between the skills people have and the skills industries need. Bridging that gap is where change truly happens. If we know that workforce training and compassionate teaching can turn despair into possibility, why are we not investing more-expanding access, strengthening programs, and reaching people where they are?</p>
+
+        <p class="MsoNormal"><b>This isn't about numbers or policies written on paper. It's about people, real people like Maria, like me, and maybe even you, the reader. People whose lives deserve to be seen, whose voices deserve to be heard, and whose futures deserve more than silence in the face of struggle.</b></p>
+    </div>
+
+    <script>
+        function switchTab(tabIndex) {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            tabs[tabIndex].classList.add('active');
+            tabContents[tabIndex].classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
