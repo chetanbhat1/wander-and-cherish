@@ -1,0 +1,52 @@
+:root{--ink:#241F1B;--cream:#FAF6EF;--paper:#fff;--teal:#15605A;--teal-dark:#0E443F;--terra:#D26A3E;--sand:#E7DDCB;--muted:#6F665B}
+*{box-sizing:border-box}html,body{margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+a{text-decoration:none;color:inherit}
+
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(250,246,239,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--sand)}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:20px}
+.brand .mark{width:34px;height:34px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff}
+.navlinks{display:flex;gap:28px;font-size:14px;font-weight:500}
+.navlinks a{color:var(--muted)}.navlinks a.active{color:var(--ink)}.navlinks a.soon{opacity:.55}
+
+.dhero{position:relative;height:420px;display:flex;align-items:flex-end;background-size:cover;background-position:center}
+.dhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.15) 0%,rgba(20,16,12,.72) 100%)}
+.dhero .inner{position:relative;z-index:2;color:#fff;max-width:1120px;margin:0 auto;width:100%;padding:0 32px 40px}
+.dhero .loc{display:inline-flex;align-items:center;gap:7px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;opacity:.92;margin-bottom:12px}
+.dhero h1{font-family:'Fraunces',serif;font-weight:600;font-size:54px;margin:0;line-height:1.05}
+
+.crumb{max-width:760px;margin:24px auto 0;padding:0 32px;font-size:14px;color:var(--muted)}
+.crumb a{color:var(--teal);font-weight:500}
+
+.article{max-width:760px;margin:26px auto 50px;padding:0 32px}
+.article .lead{font-family:'Fraunces',serif;font-style:italic;font-size:23px;line-height:1.45;color:var(--teal-dark);margin:0 0 28px}
+.article p{font-size:17px;margin:0 0 18px;color:#33302b}
+.article h2,.article h3{font-family:'Fraunces',serif;color:var(--ink);margin:36px 0 14px;line-height:1.2}
+.article h2{font-size:28px}.article h3{font-size:21px}
+.article ul{padding-left:22px;margin:0 0 20px}
+.article li{font-size:17px;margin:0 0 9px;color:#33302b}
+.article b,.article strong{font-weight:600;color:var(--ink)}
+.article .accent{color:var(--terra);font-weight:600}
+
+.figure,.article figure{margin:26px 0;text-align:center}
+.figure img,.article figure img,.article img{max-width:100%;height:auto;border-radius:16px;box-shadow:0 12px 36px rgba(36,31,27,.16)}
+.figure figcaption,.article figcaption{font-size:13px;color:var(--muted);margin-top:10px;font-style:italic}
+
+.quote{font-family:'Fraunces',serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--teal-dark);border-left:4px solid var(--terra);padding:8px 0 8px 22px;margin:28px 0}
+
+.section-label{display:inline-block;color:var(--terra);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin:34px 0 4px}
+
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px;background:var(--paper);border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(36,31,27,.07)}
+th{background:var(--teal);color:#fff;text-align:left;padding:11px 14px;font-weight:600;font-size:13px;letter-spacing:.4px;text-transform:uppercase}
+td{padding:11px 14px;border-top:1px solid var(--sand);color:#33302b;vertical-align:top}
+tr:nth-child(even) td{background:#FBF8F2}
+
+.nextnav{max-width:760px;margin:0 auto 70px;padding:0 32px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.nextnav a{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--sand);border-radius:30px;padding:11px 20px;font-weight:500;font-size:14px;color:var(--teal-dark);transition:border-color .2s,color .2s}
+.nextnav a:hover{border-color:var(--terra);color:var(--terra)}
+
+footer{background:var(--teal-dark);color:#E9E2D6;text-align:center;padding:42px 24px}
+footer .fbrand{font-family:'Fraunces',serif;font-size:24px;font-weight:600;color:#fff;margin-bottom:8px}
+footer p{margin:5px 0;font-size:14px;opacity:.85}
+
+@media(max-width:760px){.navlinks{display:none}.dhero{height:320px}.dhero h1{font-size:36px}.article,.crumb,.nextnav{padding-left:22px;padding-right:22px}}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel — Wander &amp; Cherish (Prototype)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#241F1B;--cream:#FAF6EF;--paper:#fff;--teal:#15605A;--teal-dark:#0E443F;--terra:#D26A3E;--sand:#E7DDCB;--muted:#6F665B}
+  *{box-sizing:border-box}html,body{margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+  a{text-decoration:none;color:inherit}
+  .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:rgba(250,246,239,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--sand)}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-weight:600;font-size:20px}
+  .brand .mark{width:34px;height:34px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;color:#fff}
+  .navlinks{display:flex;gap:28px;font-size:14px;font-weight:500}
+  .navlinks a{color:var(--muted)}.navlinks a.active{color:var(--ink)}.navlinks a.soon{opacity:.55}
+
+  .pagehead{text-align:center;padding:64px 24px 8px}
+  .pagehead .eyebrow{color:var(--terra);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  .pagehead h1{font-family:'Fraunces',serif;font-weight:600;font-size:48px;margin:10px 0 10px}
+  .pagehead p{color:var(--muted);font-size:17px;max-width:600px;margin:0 auto}
+
+  .subnav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:30px auto 0;padding:0 24px}
+  .pill{padding:9px 20px;border-radius:30px;border:1px solid var(--sand);background:var(--paper);font-weight:500;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s}
+  .pill:hover{border-color:var(--teal);color:var(--teal)}
+  .pill.active{background:var(--teal);border-color:var(--teal);color:#fff}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1120px;margin:44px auto 80px;padding:0 32px}
+  .dest{position:relative;border-radius:16px;overflow:hidden;height:260px;cursor:pointer;box-shadow:0 8px 26px rgba(36,31,27,.08)}
+  .dest img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+  .dest:hover img{transform:scale(1.07)}
+  .dest::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.65) 100%)}
+  .dest .label{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff}
+  .dest .label .name{font-family:'Fraunces',serif;font-weight:600;font-size:23px;display:block}
+  .dest .label .meta{font-size:13px;opacity:.9;display:flex;align-items:center;gap:6px;margin-top:3px}
+  .dest .pin{position:absolute;top:14px;left:14px;z-index:2;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;color:var(--terra)}
+  @media(max-width:900px){.gallery{grid-template-columns:1fr;max-width:520px}.pagehead h1{font-size:36px}.navlinks{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="index.html"><span class="mark"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polygon points="16 8 13 13 8 16 11 11" fill="currentColor" stroke="none"/></svg></span>Wander &amp; Cherish</a>
+  <div class="navlinks"><a href="index.html">Home</a><a href="travel.html" class="active">Travel</a><a href="stories.html">Inspiring Stories</a><a href="lifejourneys.html" class="soon">Life Journeys</a><a href="about.html">About</a></div>
+</nav>
+
+<div class="pagehead">
+  <div class="eyebrow">Travel</div>
+  <h1>Places worth the journey</h1>
+  <p>Destinations, solo-travel notes, hard-won tips, and activities worth trying — all in one place.</p>
+  <div class="subnav">
+    <span class="pill active">Destinations</span>
+    <span class="pill">Solo Travel</span>
+    <span class="pill">Travel Tips</span>
+    <span class="pill">Activities to try</span>
+  </div>
+</div>
+
+<section class="gallery">
+  <a class="dest" href="arizona.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1558370781-d6196949e317?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Arizona</span><span class="meta">United States</span></span></a>
+  <a class="dest" href="costa-rica.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1518259102261-b40117eabbc9?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Costa Rica</span><span class="meta">Central America</span></span></a>
+  <a class="dest" href="rajasthan.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Rajasthan</span><span class="meta">India</span></span></a>
+  <a class="dest" href="rome.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Rome</span><span class="meta">Italy</span></span></a>
+  <a class="dest" href="iceland.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Iceland</span><span class="meta">Nordics</span></span></a>
+  <a class="dest" href="national-parks.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">National Parks</span><span class="meta">United States</span></span></a>
+  <a class="dest" href="switzerland.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Switzerland</span><span class="meta">Alps</span></span></a>
+  <a class="dest" href="hawaii.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Hawai'i</span><span class="meta">Pacific</span></span></a>
+  <a class="dest" href="ireland.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Ireland</span><span class="meta">British Isles</span></span></a>
+  <a class="dest" href="santorini-mykonos.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Santorini &amp; Mykonos</span><span class="meta">Greece</span></span></a>
+</section>
+</body>
+</html>
