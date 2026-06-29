@@ -32,7 +32,7 @@ cd /Users/chet/code/wander-and-cherish
 git add docs DEPLOY-GITHUB-PAGES.md
 git commit -m "Add GitHub Pages site"
 # create a repo on github.com first (e.g. "wander-and-cherish"), then:
-git remote add origin https://github.com/<your-username>/wander-and-cherish.git
+git remote add origin https://github.com/chetanbhat1/wander-and-cherish.git
 git push -u origin master      # or: git branch -M main && git push -u origin main
 ```
 
@@ -51,8 +51,10 @@ Open that URL and click around — the whole site should work.
 ## Step 3 — Point wanderandcherish.com at GitHub (Bluehost DNS)
 
 In **Bluehost → Domains → wanderandcherish.com → DNS / Zone Editor**, set these records.
-First **remove** any existing `A` record for `@` that points at Bluehost/parking, and any
-"parked page" / redirect on the domain.
+First **remove the existing `A` record for `@`** — by default it points at Bluehost's
+parking IP **`66.81.203.198`** (and `www` points there too). That parking record is the
+single most common reason GitHub reports "Domain does not resolve to the GitHub Pages
+server," so it must be deleted, along with any "parked page" / redirect on the domain.
 
 **Apex domain (`wanderandcherish.com`) — add four A records:**
 
@@ -70,10 +72,12 @@ First **remove** any existing `A` record for `@` that points at Bluehost/parking
 
 | Type | Host/Name | Value |
 |------|-----------|-------|
-| CNAME | www | `<your-username>.github.io` |
+| CNAME | www | `chetanbhat1.github.io` |
 
-(Use your GitHub username, lowercase, e.g. `chetbhat.github.io` — note the trailing
-`.github.io`, **not** the repo name.)
+(That's your GitHub username — note the trailing `.github.io`, **not** the repo name.
+Also delete the old `www` record pointing at `66.81.203.198` first; if Bluehost won't
+let you add a CNAME for `www` while an A record exists, remove that A record, or instead
+give `www` the same four GitHub A records as the apex.)
 
 ## Step 4 — Tell GitHub about the domain &amp; enable HTTPS
 
@@ -105,8 +109,17 @@ GitHub redeploys within a minute.
 
 - **DNS takes time.** Apex A-record changes on Bluehost can take a few hours to
   propagate. The github.io URL works immediately in the meantime.
-- **"Domain does not resolve to the GitHub Pages server."** Double-check the four A
-  records are exactly the IPs above and that the old Bluehost A record is gone.
+- **"Domain does not resolve to the GitHub Pages server" (NotServedByPagesError).** This
+  almost always means DNS still points at Bluehost. Check what it currently resolves to:
+  ```bash
+  dig +short wanderandcherish.com
+  ```
+  If you see **`66.81.203.198`** (Bluehost parking) instead of the four `185.199.x.153`
+  GitHub IPs, the old apex `A` record wasn't removed. Delete it, confirm only the four
+  GitHub A records remain for `@`, and re-check (apex changes can take a few hours).
+  Do the same for `www` — it must be a CNAME to `chetanbhat1.github.io`, not the parking IP.
+  Once `dig +short wanderandcherish.com` returns the four GitHub IPs, GitHub's check goes
+  green and you can enable **Enforce HTTPS**.
 - **Keep the `CNAME` and `.nojekyll` files** in `docs/` — deleting `CNAME` un-sets the
   custom domain; deleting `.nojekyll` can make GitHub skip files.
 - **Photos:** the 5 personal photos (Santorini + 4 Rajeshree) are bundled in `docs/`.
