@@ -77,8 +77,13 @@ body{top:0 !important}
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <style>
-.brand .mark{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid var(--sand);box-shadow:0 1px 3px rgba(36,31,27,.10);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0}
-.brand .mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.brand .mark{width:50px;height:50px;border-radius:50%;background:#fff;border:1px solid var(--sand);box-shadow:0 1px 3px rgba(36,31,27,.10);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0;cursor:zoom-in;transition:transform .15s}
+.brand .mark:hover{transform:scale(1.06)}
+.brand .mark img{width:100%;height:100%;object-fit:cover;transform:scale(1.52)}
+.logo-lb{position:fixed;inset:0;z-index:200;background:rgba(20,16,12,.82);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.logo-lb.open{display:flex}
+.logo-lb img{width:min(640px,88vw,88vh);height:min(640px,88vw,88vh);border-radius:50%;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.logo-lb .x{position:absolute;top:18px;right:26px;color:#fff;font-size:34px;line-height:1;cursor:pointer;opacity:.85;font-family:Arial,sans-serif}
 </style>
 <style>
 footer{background:var(--teal-dark);color:#E9E2D6;text-align:center;padding:40px 24px}
@@ -91,7 +96,7 @@ footer .flegal span{opacity:.4}
 </head>
 <body>
 <nav class="nav">
-  <a class="brand" href="index.html"><span class="mark"><img src="logo.png" alt="Wander &amp; Cherish logo"></span>Wander &amp; Cherish</a>
+  <a class="brand" href="index.html"><span class="mark" role="button" tabindex="0" aria-label="View logo" onclick="event.preventDefault();event.stopPropagation();wacLogo(true)"><img src="logo.png" alt="Wander &amp; Cherish logo"></span>Wander &amp; Cherish</a>
   <div class="navmenu">
   <div class="navlinks"><a href="index.html">Home</a><a href="travel.html">Travel</a><a href="stories.html">Inspiring Stories</a><a href="lifejourneys.html" class="soon">Life Journeys</a><a href="about.html" class="active">About</a></div>
   <div class="lang" title="Translate this site">
@@ -194,5 +199,13 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<div class="logo-lb" id="logoLB" onclick="wacLogo(false)">
+  <span class="x" aria-label="Close">&times;</span>
+  <img src="logo.png" alt="Wander &amp; Cherish logo">
+</div>
+<script>
+function wacLogo(show){var lb=document.getElementById('logoLB');if(lb)lb.classList.toggle('open',show);}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')wacLogo(false);});
+</script>
 </body>
 </html>
