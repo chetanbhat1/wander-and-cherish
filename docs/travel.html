@@ -66,6 +66,27 @@ body{top:0 !important}
   .navmenu .lang{margin:12px 28px 2px;align-self:flex-start}
 }
 </style>
+<style>
+  .gallery{margin-bottom:44px}
+  .guides{max-width:1120px;margin:0 auto 84px;padding:0 32px}
+  .guides-head{text-align:center;margin-bottom:30px}
+  .guides-head .eyebrow{color:var(--terra);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  .guides-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:32px;margin:8px 0 6px;color:var(--ink)}
+  .guides-head p{color:var(--muted);font-size:16px;margin:0}
+  .gcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .gcard{background:var(--paper);border:1px solid var(--sand);border-radius:16px;overflow:hidden;box-shadow:0 8px 26px rgba(36,31,27,.06);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+  .gcard:hover{transform:translateY(-5px);box-shadow:0 16px 38px rgba(36,31,27,.14)}
+  .gimg{height:180px;background-size:cover;background-position:center;position:relative}
+  .gimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.28) 100%)}
+  .gicon{position:absolute;top:14px;left:14px;z-index:2;width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--teal);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+  .gbody{padding:20px 22px 22px}
+  .gbody h3{font-family:'Fraunces',serif;font-weight:600;font-size:22px;margin:0 0 6px;color:var(--ink)}
+  .gbody p{color:var(--muted);font-size:14.5px;margin:0 0 14px;line-height:1.55}
+  .gcard .go{display:inline-flex;align-items:center;gap:7px;color:var(--teal);font-weight:600;font-size:14px}
+  .gcard .go svg{transition:transform .2s}
+  .gcard:hover .go svg{transform:translateX(4px)}
+  @media(max-width:900px){.gcards{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -121,6 +142,47 @@ body{top:0 !important}
   <a class="dest" href="ireland.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Ireland</span><span class="meta">British Isles</span></span></a>
   <a class="dest" href="santorini-mykonos.html"><span class="pin"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80"><span class="label"><span class="name">Santorini &amp; Mykonos</span><span class="meta">Greece</span></span></a>
 </section>
+
+<section class="guides">
+  <div class="guides-head">
+    <div class="eyebrow">Plan your trip</div>
+    <h2>More from Travel</h2>
+    <p>Beyond the map — notes, tips, and adventures for the road.</p>
+  </div>
+  <div class="gcards">
+    <a class="gcard" href="solo-travel.html">
+      <div class="gimg" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVJAh-LEXKYvMpfTuk7y17LslMxHLG6XoeYLM7R5rd4vyx_2pg1Eh49SZm2Av3-7Ak9tZYgtax-J_VmGK31OYOu6mmeyUrLUJEs5RERO8wUDlqLloqdLjERMXS4_gLOZo0XPPIT6h974KXVvuAzrRI90LLoYTaj3v6Rr6SgolF-bz9M0K40uxJUSLXj4w/s800/PHOTO-2025-06-19-15-43-31.jpg')">
+        <span class="gicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+      </div>
+      <div class="gbody">
+        <h3>Solo Travel</h3>
+        <p>Why I started, what I learned about myself, and how to do it safely.</p>
+        <span class="go">Read<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a class="gcard" href="travel-tips.html">
+      <div class="gimg" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit9ItXU6BRcpa7dsOq4owhn5hsLYJyRw0wUVcdEJ0fC207IWZOsMcWGwr7h5kiIzEDleU0o9CuGXKKSnJlyBrb_idFc46kQDVoQC7YKyCbPPJb2T8m8SHvxxNSfNED5C3Tnf2_s05vl6a428E7JC0M9G33DGRUYJKTzDfe42nCqhvZTKKBm0le3DfSxjo/s800/20220319_124438.jpg')">
+        <span class="gicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span>
+      </div>
+      <div class="gbody">
+        <h3>Travel Tips</h3>
+        <p>Nine practical, hard-won tips for a smoother, safer trip.</p>
+        <span class="go">Read<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a class="gcard" href="activities.html">
+      <div class="gimg" style="background-image:url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxp8RZZnIbBIhxCi4pAXhXjwbPjcOmt-Qj2Qn6v4soa0QlW9Utq_sKUeWmt_9I53NNrF4U-ew8h_7ZAj5wt5JEn_EmYE2P9TafWPJxEbu6QcmYKSkaBzTEpEv58-FSqRUQDAOdAA82Yd_P42QKXex0VZ-Z9xhpK3dgUuSYedaGa16tagDFngxC0C161Kw/s800/IMG_4179.HEIC')">
+        <span class="gicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+      </div>
+      <div class="gbody">
+        <h3>Activities to try</h3>
+        <p>Ten adventures — from hot-air balloons to shark cage diving.</p>
+        <span class="go">Read<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <div id="google_translate_element"></div>
 <script type="text/javascript">
 function googleTranslateElementInit(){
